@@ -1,19 +1,43 @@
+body{
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: center;
+    grid-row-gap: 30px;
+}
 #memory{
 	background:#123;
-	border:#999 1px solid;
 	width:800px;
-	height:540px;
-	margin:0px auto;
+    height:540px;
+    display:none;
 }
 #memory > div{
     background: url(assets/q.png) no-repeat center;
+    border-radius: 15px;
 	border:#000 1px solid;
-	width:71px;
-	height:71px;
+	width:70px;
+	height:70px;
 	float:left;
 	margin:10px;
 	padding:20px;
 	font-size:64px;
 	cursor:pointer;
-	text-align:center;
+    text-align:center;
+}
+
+#start_button{
+    color: #fff !important;
+    background: #60a3bc;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 40px auto;
+    display: block;
+    font-size: 22px;
+}
+
+.heading{
+    margin-top: 30px;
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+    display: flex;
+    justify-content: space-evenly;
 }

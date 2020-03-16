@@ -2,10 +2,20 @@
 
 <head>
     <link href="game.css" type="text/css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="game.js"></script>
 </head>
 
-<body onload="newGame()">
-    <div id="memory"></div>
+<body>
+    <div class="heading">
+        Memory Game
+        <img src="assets/m.png" width="50px" height="50px">
+    </div>
+    <div id="start">
+        <button id="start_button" onclick="newGame()">START</button>
+    </div>
+    <div id="memory">
+        
+    </div>
 </body>

@@ -20,6 +20,8 @@ function shuffle(array) {
 
 
  function newGame() {
+    document.getElementById('start').style.display = 'none';
+    document.getElementById('memory').style.display = 'block';
     shuffled_array = shuffle(marray);
     var insert = '';
     for (var i=0;i<shuffled_array.length;i++){
