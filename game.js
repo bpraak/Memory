@@ -1,19 +1,13 @@
 var marray = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', '+', '?', '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', '+', '?'];
 var tiles_flipped = 0;
-var flipped_value = [];
+var flipped_values = [];
 var flipped_value_id = [];
 var shuffled_array = [];
 
 function shuffle(array) {
     var copy = [], n = array.length, i;
-
-    // While there remain elements to shuffle…
     while (n) {
-
-        // Pick a remaining element…
         i = Math.floor(Math.random() * array.length);
-
-        // If not already shuffled, move it to the new array.
         if (i in array) {
             copy.push(array[i]);
             delete array[i];
@@ -34,7 +28,38 @@ function shuffle(array) {
      document.getElementById('memory').innerHTML = insert;
  }
 
- function flip_tile(){
-     
+ function flip_tile(tile,val){
+    if(tile.innerHTML=="" && flipped_values.length<2){
+        tile.style.background = "white";
+        tile.innerHTML = val;
+        if(flipped_values.length==0){
+            flipped_values.push(val);
+            flipped_value_id.push(tile.id);
+        }
+        else if (flipped_values.length==1){
+            flipped_values.push(val);
+            flipped_value_id.push(tile.id);
+            if(flipped_values[0]==flipped_values[1]){
+                tiles_flipped+=2;
+                flipped_values = [];
+                flipped_value_id = [];
+                if(tiles_flipped==marray.length){
+                    alert("You have completed the game");
+                    window.location.reload();
+                }
+            }
+            else{
+                function flip_back(){
+                    document.getElementById(flipped_value_id[0]).style.background = 'url(assets/q.png) no-repeat center';
+                    document.getElementById(flipped_value_id[1]).style.background = 'url(assets/q.png) no-repeat center';
+                    document.getElementById(flipped_value_id[0]).innerHTML = "";
+                    document.getElementById(flipped_value_id[1]).innerHTML = "";
+                    flipped_values = [];
+                    flipped_value_id = [];
+                }
+                setTimeout(flip_back,1000);
+            }
+        }
+    }
  }
 

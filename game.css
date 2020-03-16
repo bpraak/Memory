@@ -6,8 +6,7 @@
 	margin:0px auto;
 }
 #memory > div{
-    background: url(assets/538-5384251_animated-question-marks-question-mark-card-clipart.png) no-repeat center;
-    background-size: 111px 111px;
+    background: url(assets/q.png) no-repeat center;
 	border:#000 1px solid;
 	width:71px;
 	height:71px;
