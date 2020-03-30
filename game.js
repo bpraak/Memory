@@ -20,6 +20,10 @@ function shuffle(array) {
 
 
  function newGame() {
+    setInterval(time,1000);
+    document.getElementById('moves').innerHTML = "0";
+    document.getElementById('time').innerHTML = "300";
+    document.getElementById('timer').style.display = "";
     document.getElementById('start').style.display = 'none';
     document.getElementById('memory').style.display = 'block';
     shuffled_array = shuffle(marray);
@@ -31,6 +35,8 @@ function shuffle(array) {
  }
 
  function flip_tile(tile,val){
+     moves = document.getElementById('moves').innerHTML;
+     document.getElementById('moves').innerHTML = parseInt(moves)+1;
     if(tile.innerHTML=="" && flipped_values.length<2){
         tile.style.background = "white";
         tile.innerHTML = val;
@@ -46,7 +52,8 @@ function shuffle(array) {
                 flipped_values = [];
                 flipped_value_id = [];
                 if(tiles_flipped==marray.length){
-                    alert("You have completed the game");
+                    move = document.getElementById('moves').innerHTML
+                    alert("You have completed the game\nNo of moves = "+move);
                     window.location.reload();
                 }
             }
@@ -63,5 +70,19 @@ function shuffle(array) {
             }
         }
     }
+ }
+
+ function time(){
+    time_now = document.getElementById('time').innerHTML;
+    if(parseInt(time_now)==0){
+        alert("Time's up. You have lost");
+        window.location.reload();
+
+    }
+    document.getElementById('time').innerHTML = parseInt(time_now)-1;
+ }
+
+ function moves(){
+
  }
 
