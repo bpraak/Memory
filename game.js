@@ -22,7 +22,7 @@ function shuffle(array) {
  function newGame() {
     setInterval(time,1000);
     document.getElementById('moves').innerHTML = "0";
-    document.getElementById('time').innerHTML = "300";
+    document.getElementById('time').innerHTML = "80";
     document.getElementById('timer').style.display = "";
     document.getElementById('start').style.display = 'none';
     document.getElementById('memory').style.display = 'block';
